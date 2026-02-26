@@ -315,16 +315,9 @@ struct OneOnOneSessionView: View {
 
     // MARK: - Data helpers
 
-    private func pastSessions() -> [OneOnOneSession] {
-        (report.documents
-            .compactMap { _ -> OneOnOneSession? in nil }) // placeholder
-        // Actually fetch from the model context via the report relationship
-        // We'll use the sessions we can access via report's documents indirectly
-        // For now return empty — the prompt builder queries directly
-        return []
-    }
-
-    private func openItemsFromPastSessions() -> [ActionItem] { [] }
+    // (Helpers kept minimal — all querying is done inside generateSummary using
+    //  plain fetches + in-memory filtering, because #Predicate cannot traverse
+    //  optional SwiftData relationships like $0.report?.id reliably.)
 
     // MARK: - Generation
 
@@ -332,27 +325,33 @@ struct OneOnOneSessionView: View {
         isGenerating = true
         generationError = nil
 
-        // Fetch past sessions for this report to build context
-        let descriptor = FetchDescriptor<OneOnOneSession>(
-            predicate: #Predicate { $0.report?.id == report.id },
+        // Capture the ID as a plain UUID so the closures below capture a value type,
+        // not the full SwiftData model object.
+        let reportID = report.id
+
+        // #Predicate cannot traverse optional relationships ($0.report?.id) in this
+        // toolchain — fetch everything and filter in Swift instead. Record counts
+        // per EM are small, so this is fine.
+
+        // Past sessions — sorted newest first, excluding the current session
+        let allSessions = (try? ctx.fetch(FetchDescriptor<OneOnOneSession>(
             sortBy: [SortDescriptor(\.date, order: .reverse)]
-        )
-        let pastSessions = (try? ctx.fetch(descriptor)) ?? []
-        let recentPast = pastSessions.filter { $0.id != existingSession?.id }.prefix(3)
+        ))) ?? []
+        let recentPast = allSessions
+            .filter { $0.report?.id == reportID && $0.id != existingSession?.id }
+            .prefix(3)
 
-        // Fetch all open action items for this report
-        let actionDescriptor = FetchDescriptor<ActionItem>(
-            predicate: #Predicate { $0.report?.id == report.id && $0.isCompleted == false }
-        )
-        let openItems = (try? ctx.fetch(actionDescriptor)) ?? []
+        // Open action items for this report
+        let allActionItems = (try? ctx.fetch(FetchDescriptor<ActionItem>())) ?? []
+        let openItems = allActionItems.filter { $0.report?.id == reportID && !$0.isCompleted }
 
-        // All recent artifacts (last 45 days)
+        // Recent artifacts (last 45 days) for this report
         let cutoff = Calendar.current.date(byAdding: .day, value: -45, to: Date()) ?? Date()
-        let artifactDescriptor = FetchDescriptor<ContributionArtifact>(
-            predicate: #Predicate { $0.report?.id == report.id && $0.artifactDate >= cutoff }
-        )
-        let recentArtifacts = (try? ctx.fetch(artifactDescriptor)) ?? []
-        // Also include any just-added artifacts from this session
+        let allStoredArtifacts = (try? ctx.fetch(FetchDescriptor<ContributionArtifact>())) ?? []
+        let recentArtifacts = allStoredArtifacts.filter {
+            $0.report?.id == reportID && $0.artifactDate >= cutoff
+        }
+        // Merge with any artifacts just added in this session (not yet persisted)
         let allArtifacts = recentArtifacts + newArtifacts.filter { art in
             !recentArtifacts.contains { $0.id == art.id }
         }
