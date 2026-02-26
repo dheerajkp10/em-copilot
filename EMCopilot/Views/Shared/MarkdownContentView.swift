@@ -157,12 +157,11 @@ struct MarkdownContentView: View {
         }
     }
 
-    /// Renders inline markdown (bold, italic, code, links) via AttributedString
+    /// Renders inline markdown (bold, italic, code, links) via AttributedString.
+    /// Uses the default options — our block parser already strips block-level syntax
+    /// before calling this, so passing a plain line is always safe.
     private func inline(_ text: String) -> Text {
-        if let attributed = try? AttributedString(
-            markdown: text,
-            options: .init(interpretedSyntax: .inlinesOnly)
-        ) {
+        if let attributed = try? AttributedString(markdown: text) {
             return Text(attributed)
         }
         return Text(text)
