@@ -161,7 +161,7 @@ struct MarkdownContentView: View {
     private func inline(_ text: String) -> Text {
         if let attributed = try? AttributedString(
             markdown: text,
-            options: .init(interpretedSyntax: .inlinesOnlyPreservingWhitespace)
+            options: .init(interpretedSyntax: .inlinesOnly)
         ) {
             return Text(attributed)
         }

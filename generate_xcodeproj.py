@@ -408,10 +408,10 @@ def create_asset_catalog():
     with open(f"{base}/Contents.json", "w") as f:
         json.dump({"info": {"author": "xcode", "version": 1}}, f, indent=2)
 
-    # AppIcon Contents.json (universal)
+    # AppIcon Contents.json — empty images list avoids "unassigned child" warnings.
+    # Add real .png icon files here only once you have artwork.
     appicon_contents = {
-        "images": [{"idiom": "universal", "platform": "ios", "size": "1024x1024"},
-                   {"idiom": "mac", "size": "1024x1024", "scale": "1x"}],
+        "images": [],
         "info": {"author": "xcode", "version": 1}
     }
     with open(f"{base}/AppIcon.appiconset/Contents.json", "w") as f:
