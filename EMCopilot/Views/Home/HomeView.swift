@@ -122,18 +122,7 @@ struct QuickActionCard: View {
         .buttonStyle(.plain)
     }
 
-    private var cardColor: Color {
-        switch type.color {
-        case "blue":   return .blue
-        case "green":  return .green
-        case "purple": return .purple
-        case "orange": return .orange
-        case "teal":   return .teal
-        case "indigo": return .indigo
-        case "red":    return .red
-        default:       return .gray
-        }
-    }
+    private var cardColor: Color { type.color }
 }
 
 struct StatCard: View {

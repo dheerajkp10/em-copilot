@@ -1,5 +1,6 @@
 import Foundation
 import SwiftData
+import SwiftUI
 
 enum DocumentType: String, Codable, CaseIterable {
     case perfReview      = "Performance Review"
@@ -22,15 +23,15 @@ enum DocumentType: String, Codable, CaseIterable {
         }
     }
 
-    var color: String {
+    var color: Color {
         switch self {
-        case .perfReview:       return "blue"
-        case .promoDoc:         return "green"
-        case .oneOnOne:         return "purple"
-        case .pip:              return "orange"
-        case .programStatus:    return "teal"
-        case .stakeholderEmail: return "indigo"
-        case .riskReport:       return "red"
+        case .perfReview:       return .blue
+        case .promoDoc:         return .green
+        case .oneOnOne:         return .purple
+        case .pip:              return .orange
+        case .programStatus:    return .teal
+        case .stakeholderEmail: return .indigo
+        case .riskReport:       return .red
         }
     }
 }
