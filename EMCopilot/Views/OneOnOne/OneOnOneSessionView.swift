@@ -305,11 +305,21 @@ struct OneOnOneSessionView: View {
         if !newActionItems.isEmpty {
             parts.append("\(newActionItems.count) action item(s)")
         }
-        // Past sessions
-        let past = pastSessions()
-        if !past.isEmpty { parts.append("\(past.count) past session(s) for context") }
-        let open = openItemsFromPastSessions()
-        if !open.isEmpty { parts.append("\(open.count) open item(s) from previous meetings") }
+        // Count past sessions and open items using in-memory filtering
+        // (avoids #Predicate optional-relationship issues)
+        let reportID = report.id
+        let allSessions = (try? ctx.fetch(FetchDescriptor<OneOnOneSession>())) ?? []
+        let pastCount = allSessions
+            .filter { $0.report?.id == reportID && $0.id != existingSession?.id }
+            .count
+        if pastCount > 0 { parts.append("\(pastCount) past session(s) for context") }
+
+        let allItems = (try? ctx.fetch(FetchDescriptor<ActionItem>())) ?? []
+        let openCount = allItems
+            .filter { $0.report?.id == reportID && !$0.isCompleted }
+            .count
+        if openCount > 0 { parts.append("\(openCount) open item(s) from previous meetings") }
+
         return parts.joined(separator: " · ")
     }
 
