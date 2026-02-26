@@ -104,11 +104,13 @@ struct DirectReportDetailView: View {
     @Environment(\.modelContext) private var ctx
     let report: DirectReport
     @State private var showingGenerator = false
+    @State private var showingOneOnOneHub = false
     @State private var selectedDocType: DocumentType = .perfReview
 
     var body: some View {
         NavigationStack {
             List {
+                // Profile header
                 Section {
                     HStack(spacing: 16) {
                         AvatarView(initials: report.initials, color: .blue, size: 56)
@@ -123,8 +125,42 @@ struct DirectReportDetailView: View {
                     .padding(.vertical, 6)
                 }
 
-                Section("Quick Actions") {
-                    ForEach([DocumentType.perfReview, .promoDoc, .oneOnOne, .pip], id: \.self) { type in
+                // 1:1 Hub — prominent entry point at the top
+                Section {
+                    Button {
+                        showingOneOnOneHub = true
+                    } label: {
+                        HStack(spacing: 14) {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(Color.purple.opacity(0.12))
+                                    .frame(width: 36, height: 36)
+                                Image(systemName: "person.2.circle.fill")
+                                    .foregroundStyle(.purple)
+                                    .font(.title3)
+                            }
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("1:1 Sessions")
+                                    .fontWeight(.semibold)
+                                Text("Notes · Action items · Contributions")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .font(.caption)
+                                .foregroundStyle(.tertiary)
+                        }
+                        .padding(.vertical, 2)
+                    }
+                    .buttonStyle(.plain)
+                } header: {
+                    Text("1:1 Workflow")
+                }
+
+                // AI document generators (removes oneOnOne from here — it lives in the hub)
+                Section("Generate Document") {
+                    ForEach([DocumentType.perfReview, .promoDoc, .pip], id: \.self) { type in
                         Button {
                             selectedDocType = type
                             showingGenerator = true
@@ -167,6 +203,9 @@ struct DirectReportDetailView: View {
                     preselectedType: selectedDocType,
                     preselectedReport: report
                 )
+            }
+            .sheet(isPresented: $showingOneOnOneHub) {
+                OneOnOneHubView(report: report)
             }
         }
     }

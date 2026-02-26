@@ -12,6 +12,14 @@ struct GeneratedDocumentOutputView: View {
     @State private var showingSaveSheet = false
     @State private var isCopied = false
 
+    private var suggestedFileName: String {
+        let base = "\(type.rawValue)\(reportName.isEmpty ? "" : "-\(reportName)")"
+            .replacingOccurrences(of: " ", with: "-")
+            .replacingOccurrences(of: "/", with: "-")
+            .lowercased()
+        return "\(base).md"
+    }
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -20,6 +28,7 @@ struct GeneratedDocumentOutputView: View {
                     HStack {
                         Image(systemName: type.icon)
                             .font(.title2)
+                            .foregroundStyle(type.color)
                         VStack(alignment: .leading) {
                             Text(type.rawValue)
                                 .fontWeight(.semibold)
@@ -39,12 +48,10 @@ struct GeneratedDocumentOutputView: View {
 
                     Divider()
 
-                    // Generated content (rendered as plain text for now)
-                    Text(content)
-                        .font(.system(.callout, design: .default))
+                    // Generated content — rendered as rich markdown
+                    MarkdownContentView(markdown: content)
                         .textSelection(.enabled)
                         .padding()
-                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
             .navigationTitle("Generated Document")
@@ -52,6 +59,15 @@ struct GeneratedDocumentOutputView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Back") { dismiss() }
+                }
+
+                ToolbarItem(placement: .primaryAction) {
+                    ShareLink(
+                        item: content,
+                        preview: SharePreview(suggestedFileName, image: Image(systemName: type.icon))
+                    ) {
+                        Label("Export", systemImage: "square.and.arrow.up")
+                    }
                 }
 
                 ToolbarItem(placement: .primaryAction) {

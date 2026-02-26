@@ -23,19 +23,36 @@ def make_uuid():
 # ---------------------------------------------------------------------------
 
 SOURCE_FILES = [
+    # App entry point
     "EMCopilot/App/EMCopilotApp.swift",
+    # Models
     "EMCopilot/Models/DirectReport.swift",
     "EMCopilot/Models/GeneratedDocument.swift",
     "EMCopilot/Models/Program.swift",
+    "EMCopilot/Models/OneOnOneSession.swift",       # Phase 2: 1:1 models
+    # Services
     "EMCopilot/Services/ClaudeService.swift",
     "EMCopilot/Services/Prompts.swift",
+    # Shared views
     "EMCopilot/Views/ContentView.swift",
+    "EMCopilot/Views/Shared/MarkdownContentView.swift",  # Phase 2: markdown renderer
+    # Onboarding
+    "EMCopilot/Views/Onboarding/OnboardingView.swift",   # Phase 2: first-run flow
+    # Home
     "EMCopilot/Views/Home/HomeView.swift",
+    # Direct Reports
     "EMCopilot/Views/DirectReports/DirectReportsView.swift",
     "EMCopilot/Views/DirectReports/AddDirectReportView.swift",
+    # Document generator
     "EMCopilot/Views/Generator/DocumentGeneratorView.swift",
     "EMCopilot/Views/Generator/GeneratedDocumentOutputView.swift",
+    # Programs
     "EMCopilot/Views/Programs/ProgramManagerView.swift",
+    # 1:1 workflow (Phase 2)
+    "EMCopilot/Views/OneOnOne/OneOnOneHubView.swift",
+    "EMCopilot/Views/OneOnOne/OneOnOneSessionView.swift",
+    "EMCopilot/Views/OneOnOne/AddArtifactView.swift",
+    # Settings
     "EMCopilot/Views/Settings/SettingsView.swift",
 ]
 

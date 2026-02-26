@@ -12,7 +12,11 @@ struct EMCopilotApp: App {
                 GeneratedDocument.self,
                 Program.self,
                 ProgramRisk.self,
-                ProgramUpdate.self
+                ProgramUpdate.self,
+                // Phase 2: 1:1 workflow models
+                OneOnOneSession.self,
+                ActionItem.self,
+                ContributionArtifact.self,
             ])
             let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
             container = try ModelContainer(for: schema, configurations: config)

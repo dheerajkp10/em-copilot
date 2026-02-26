@@ -128,31 +128,92 @@ enum Prompts {
         \(emExpertPreamble)
 
         You are summarizing a 1:1 meeting between an Engineering Manager and a direct report. \
-        Your job is to create a clean, structured meeting summary that:
+        You may be provided with rich context: summaries of recent past sessions, open action items \
+        from previous meetings, and a log of the engineer's recent contributions (PRs, design docs, \
+        incidents, etc.). Use all of this to produce a deeply contextual summary.
 
+        Your output structure:
         1. **Meeting Summary** (2–3 sentences): What was discussed at a high level.
         2. **Key Topics Covered**: Bulleted list of main discussion areas.
-        3. **Action Items**: Clear, owner-assigned action items in format: \
+        3. **Action Items**: Clear, owner-assigned items in format: \
            "[ ] [Owner] – [Action] – [Due date if mentioned]"
         4. **Follow-ups for Next 1:1**: Things to revisit or track next meeting.
-        5. **Manager Notes** (optional, clearly labeled): Any coaching observations, \
+        5. **Open Items Status** (only if prior action items were provided): \
+           For each open item from past meetings, note if today's notes indicate progress, \
+           completion, or if it remains blocked/open.
+        6. **Contribution Highlights** (only if contributions were provided): \
+           1–2 sentences connecting the engineer's recent work to what was discussed today. \
+           This is useful context for performance reviews.
+        7. **Manager Notes** (optional, clearly labeled): Any coaching observations, \
            growth signals, or concerns the manager should track privately.
 
         Keep the summary professional and factual. Don't editorialize. \
         Action items should be concrete and have a clear owner.
-        Format: Markdown. Length: 200–350 words.
+        Format: Markdown. Length: 250–400 words.
         """
     }
 
-    static func oneOnOneUser(notes: String, reportName: String) -> String {
-        """
-        These are my raw notes from my 1:1 with \(reportName):
+    /// Builds the full user message for 1:1 summary generation.
+    /// Includes past session summaries, open action items, and recent contributions as context.
+    static func oneOnOneUser(
+        notes: String,
+        reportName: String,
+        pastSessions: [(date: Date, summary: String, openItems: [String])] = [],
+        openActionItems: [String] = [],
+        recentArtifacts: [(type: String, title: String, date: Date, notes: String)] = []
+    ) -> String {
+        var parts: [String] = []
 
-        \(notes)
+        // ── Past sessions ────────────────────────────────────────────────────
+        if !pastSessions.isEmpty {
+            var block = "## Context From Recent Past 1:1s\n"
+            for session in pastSessions {
+                block += "\n### Session – \(session.date.formatted(date: .abbreviated, time: .omitted))\n"
+                block += session.summary + "\n"
+                if !session.openItems.isEmpty {
+                    block += "\nOpen items from that session:\n"
+                    block += session.openItems.map { "- [ ] \($0)" }.joined(separator: "\n")
+                    block += "\n"
+                }
+            }
+            parts.append(block)
+        }
 
-        Create a clean 1:1 summary from these notes. \
-        Infer action item owners from context (if I said "I'll share the roadmap", the owner is me/Manager; \
+        // ── All open action items ─────────────────────────────────────────────
+        if !openActionItems.isEmpty {
+            var block = "## All Open Action Items (not yet completed)\n"
+            block += openActionItems.map { "- [ ] \($0)" }.joined(separator: "\n")
+            parts.append(block)
+        }
+
+        // ── Recent contributions / artifacts ─────────────────────────────────
+        if !recentArtifacts.isEmpty {
+            var block = "## Recent Contributions (last ~45 days)\n"
+            for artifact in recentArtifacts {
+                let dateStr = artifact.date.formatted(date: .abbreviated, time: .omitted)
+                block += "\n- **[\(artifact.type)]** \(artifact.title) (\(dateStr))"
+                if !artifact.notes.isEmpty {
+                    block += "\n  → \(artifact.notes)"
+                }
+            }
+            parts.append(block)
+        }
+
+        // ── Today's notes ─────────────────────────────────────────────────────
+        parts.append("## Today's 1:1 Notes – \(reportName)\n\n\(notes)")
+
+        let contextBlock = parts.joined(separator: "\n\n---\n\n")
+
+        return """
+        \(contextBlock)
+
+        ---
+
+        Create a clean 1:1 summary from today's notes. \
+        Infer action item owners from context (if I said "I'll share the roadmap", the owner is Manager; \
         if \(reportName) said they'd follow up on something, the owner is \(reportName)).
+        If open items from past meetings are provided, note their status based on today's discussion. \
+        If recent contributions are provided, reference them where relevant to today's conversation.
         """
     }
 

@@ -8,83 +8,101 @@
 
 
 /* Begin PBXBuildFile section */
-		8C9B19568B8544FCAD9BC3BB /* EMCopilotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9F9F29AFD540A681500FDE /* EMCopilotApp.swift */; };
-		5C9C6FB255674C17802D5AA4 /* DirectReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A438F7590CC4D6DBAAC0CE4 /* DirectReport.swift */; };
-		E37A2A82FE754245BE7E73CF /* GeneratedDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F210C46EBC45148CBF9B77 /* GeneratedDocument.swift */; };
-		97946C4E70D34B42BABB7D22 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7B6CBB6AE41E39AE3100B /* Program.swift */; };
-		E8BCA9A41B2B4854AEB07460 /* ClaudeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D85A203D6429D9BC37F55 /* ClaudeService.swift */; };
-		D7E9345756DE4F13B8DFBB71 /* Prompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBD41C4D844FCA825B506E /* Prompts.swift */; };
-		70BF11019006496AA2823C27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE157330904CD79B3259BB /* ContentView.swift */; };
-		D256FA7EFC564A7DB892905D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AB2FDBA0344A5BB63B5E1E /* HomeView.swift */; };
-		85FBA297D0E440A6B84ADB0C /* DirectReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B5F5213924FFCB51AB810 /* DirectReportsView.swift */; };
-		C3BA1D46D22B4F29B6C37C63 /* AddDirectReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AEE2F9811444D8A274F81 /* AddDirectReportView.swift */; };
-		B932E8514375437E8B578CCA /* DocumentGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11944B4F33541ED887F7FF9 /* DocumentGeneratorView.swift */; };
-		6D1894816AD941AC826DD8DA /* GeneratedDocumentOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AB9EAFD9FA44A3B2D06249 /* GeneratedDocumentOutputView.swift */; };
-		360CF9A1CA804398804F2BC0 /* ProgramManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E427C862494990B94764CF /* ProgramManagerView.swift */; };
-		CB4D207A32ED4E1483C53970 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53264097649B4AA7AD1FF0FE /* SettingsView.swift */; };
-		36950D1527434696AE2F87D8 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = A86452DAC40043FF8013CADC /* Assets.xcassets */; };
-		F2ED12948EF74A71BE3AD88F /* SwiftData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838776726A054E0DB32648F9 /* SwiftData.framework */; };
+		88FDA652D5D545CCB584DD23 /* EMCopilotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D21AA9E872349F2BAC3453D /* EMCopilotApp.swift */; };
+		9CB0554D8C1C40C4A139C2A9 /* DirectReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86786B654B542668FB77AC5 /* DirectReport.swift */; };
+		D20C04D33658425CAEAB2E10 /* GeneratedDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A696DBEB74656AEF22A2A /* GeneratedDocument.swift */; };
+		2B557054BCE84ABA9E7094D6 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800AD02CFA5A4A8487D35B2B /* Program.swift */; };
+		9126F89AF39F4D7085D51D4E /* OneOnOneSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81069E2C14654EE3BAEB9D5A /* OneOnOneSession.swift */; };
+		18F9072F8762434F9F75FB37 /* ClaudeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D291738CE23457289669B05 /* ClaudeService.swift */; };
+		D38BDC18AC4A454A9A73F08D /* Prompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59EBA50FC484DB7A063CF67 /* Prompts.swift */; };
+		596734869DBD46F8A7D356BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A566CFB0C70405CB162E536 /* ContentView.swift */; };
+		FB96DAB6F4EF41FD96A53BE6 /* MarkdownContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4075A0202A614D46BDB28702 /* MarkdownContentView.swift */; };
+		B818CCF718E645369149993C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B2AD232A6C45919B328387 /* OnboardingView.swift */; };
+		A4E6056424F14EB5A8932C95 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A63C5BA53E542A79064FEC0 /* HomeView.swift */; };
+		FB21F55130AF41B0815BE1BD /* DirectReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54E65B02A084C599C1EA4EC /* DirectReportsView.swift */; };
+		CA40227328FE43A08379A843 /* AddDirectReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299E1DFBB6044DF4A728C5E4 /* AddDirectReportView.swift */; };
+		5ECAE87DD103479A8589DC39 /* DocumentGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144947D6F4A7474FBF81DB60 /* DocumentGeneratorView.swift */; };
+		439DD50AAC9C4796AF51A8D1 /* GeneratedDocumentOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3D4B17065483CAA88ACF2 /* GeneratedDocumentOutputView.swift */; };
+		4E8436DBC63446BF94B8EF8B /* ProgramManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354B43100C3C40089F8AECF5 /* ProgramManagerView.swift */; };
+		6370681AACBF4FB694890200 /* OneOnOneHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6507596D7E2D4C588484D743 /* OneOnOneHubView.swift */; };
+		D83E3A2782C5438090EBFA6B /* OneOnOneSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400633D192F1479EA7981DE9 /* OneOnOneSessionView.swift */; };
+		2EDCA93EBF864821B2BD35E4 /* AddArtifactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AD688360E469C845918FB /* AddArtifactView.swift */; };
+		56EDCBC31D9743DDBF5C25A3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52279F1305B4A07AFCB872C /* SettingsView.swift */; };
+		6D7370FD8FCB4982AD680CFA /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = D530E3142033421EBAF01083 /* Assets.xcassets */; };
+		7BF3DE7E7D3E4ADEA32B8A9C /* SwiftData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3FB34453C74E7ABFA57AE0 /* SwiftData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A9F9F29AFD540A681500FDE /* EMCopilotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EMCopilotApp.swift; path = EMCopilot/App/EMCopilotApp.swift; sourceTree = "<group>"; };
-		9A438F7590CC4D6DBAAC0CE4 /* DirectReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DirectReport.swift; path = EMCopilot/Models/DirectReport.swift; sourceTree = "<group>"; };
-		00F210C46EBC45148CBF9B77 /* GeneratedDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GeneratedDocument.swift; path = EMCopilot/Models/GeneratedDocument.swift; sourceTree = "<group>"; };
-		C9A7B6CBB6AE41E39AE3100B /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Program.swift; path = EMCopilot/Models/Program.swift; sourceTree = "<group>"; };
-		C41D85A203D6429D9BC37F55 /* ClaudeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClaudeService.swift; path = EMCopilot/Services/ClaudeService.swift; sourceTree = "<group>"; };
-		FACBD41C4D844FCA825B506E /* Prompts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Prompts.swift; path = EMCopilot/Services/Prompts.swift; sourceTree = "<group>"; };
-		9FEE157330904CD79B3259BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = EMCopilot/Views/ContentView.swift; sourceTree = "<group>"; };
-		D8AB2FDBA0344A5BB63B5E1E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = EMCopilot/Views/Home/HomeView.swift; sourceTree = "<group>"; };
-		BF5B5F5213924FFCB51AB810 /* DirectReportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DirectReportsView.swift; path = EMCopilot/Views/DirectReports/DirectReportsView.swift; sourceTree = "<group>"; };
-		A04AEE2F9811444D8A274F81 /* AddDirectReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddDirectReportView.swift; path = EMCopilot/Views/DirectReports/AddDirectReportView.swift; sourceTree = "<group>"; };
-		C11944B4F33541ED887F7FF9 /* DocumentGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DocumentGeneratorView.swift; path = EMCopilot/Views/Generator/DocumentGeneratorView.swift; sourceTree = "<group>"; };
-		66AB9EAFD9FA44A3B2D06249 /* GeneratedDocumentOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GeneratedDocumentOutputView.swift; path = EMCopilot/Views/Generator/GeneratedDocumentOutputView.swift; sourceTree = "<group>"; };
-		69E427C862494990B94764CF /* ProgramManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgramManagerView.swift; path = EMCopilot/Views/Programs/ProgramManagerView.swift; sourceTree = "<group>"; };
-		53264097649B4AA7AD1FF0FE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = EMCopilot/Views/Settings/SettingsView.swift; sourceTree = "<group>"; };
-		A86452DAC40043FF8013CADC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = EMCopilot/Resources/Assets.xcassets; sourceTree = "<group>"; };
-		DA1FE6999115406197CFF998 /* EMCopilot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMCopilot.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		838776726A054E0DB32648F9 /* SwiftData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftData.framework; path = System/Library/Frameworks/SwiftData.framework; sourceTree = SDKROOT; };
+		3D21AA9E872349F2BAC3453D /* EMCopilotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EMCopilotApp.swift; path = EMCopilot/App/EMCopilotApp.swift; sourceTree = "<group>"; };
+		F86786B654B542668FB77AC5 /* DirectReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DirectReport.swift; path = EMCopilot/Models/DirectReport.swift; sourceTree = "<group>"; };
+		759A696DBEB74656AEF22A2A /* GeneratedDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GeneratedDocument.swift; path = EMCopilot/Models/GeneratedDocument.swift; sourceTree = "<group>"; };
+		800AD02CFA5A4A8487D35B2B /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Program.swift; path = EMCopilot/Models/Program.swift; sourceTree = "<group>"; };
+		81069E2C14654EE3BAEB9D5A /* OneOnOneSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OneOnOneSession.swift; path = EMCopilot/Models/OneOnOneSession.swift; sourceTree = "<group>"; };
+		4D291738CE23457289669B05 /* ClaudeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClaudeService.swift; path = EMCopilot/Services/ClaudeService.swift; sourceTree = "<group>"; };
+		E59EBA50FC484DB7A063CF67 /* Prompts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Prompts.swift; path = EMCopilot/Services/Prompts.swift; sourceTree = "<group>"; };
+		9A566CFB0C70405CB162E536 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = EMCopilot/Views/ContentView.swift; sourceTree = "<group>"; };
+		4075A0202A614D46BDB28702 /* MarkdownContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MarkdownContentView.swift; path = EMCopilot/Views/Shared/MarkdownContentView.swift; sourceTree = "<group>"; };
+		74B2AD232A6C45919B328387 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingView.swift; path = EMCopilot/Views/Onboarding/OnboardingView.swift; sourceTree = "<group>"; };
+		8A63C5BA53E542A79064FEC0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = EMCopilot/Views/Home/HomeView.swift; sourceTree = "<group>"; };
+		F54E65B02A084C599C1EA4EC /* DirectReportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DirectReportsView.swift; path = EMCopilot/Views/DirectReports/DirectReportsView.swift; sourceTree = "<group>"; };
+		299E1DFBB6044DF4A728C5E4 /* AddDirectReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddDirectReportView.swift; path = EMCopilot/Views/DirectReports/AddDirectReportView.swift; sourceTree = "<group>"; };
+		144947D6F4A7474FBF81DB60 /* DocumentGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DocumentGeneratorView.swift; path = EMCopilot/Views/Generator/DocumentGeneratorView.swift; sourceTree = "<group>"; };
+		A5E3D4B17065483CAA88ACF2 /* GeneratedDocumentOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GeneratedDocumentOutputView.swift; path = EMCopilot/Views/Generator/GeneratedDocumentOutputView.swift; sourceTree = "<group>"; };
+		354B43100C3C40089F8AECF5 /* ProgramManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgramManagerView.swift; path = EMCopilot/Views/Programs/ProgramManagerView.swift; sourceTree = "<group>"; };
+		6507596D7E2D4C588484D743 /* OneOnOneHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OneOnOneHubView.swift; path = EMCopilot/Views/OneOnOne/OneOnOneHubView.swift; sourceTree = "<group>"; };
+		400633D192F1479EA7981DE9 /* OneOnOneSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OneOnOneSessionView.swift; path = EMCopilot/Views/OneOnOne/OneOnOneSessionView.swift; sourceTree = "<group>"; };
+		217AD688360E469C845918FB /* AddArtifactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddArtifactView.swift; path = EMCopilot/Views/OneOnOne/AddArtifactView.swift; sourceTree = "<group>"; };
+		E52279F1305B4A07AFCB872C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = EMCopilot/Views/Settings/SettingsView.swift; sourceTree = "<group>"; };
+		D530E3142033421EBAF01083 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = EMCopilot/Resources/Assets.xcassets; sourceTree = "<group>"; };
+		3EC979E16C2B4C01BC5EF970 /* EMCopilot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMCopilot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A3FB34453C74E7ABFA57AE0 /* SwiftData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftData.framework; path = System/Library/Frameworks/SwiftData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A8B564F1B2C54C4396272C41 /* Frameworks */ = {
+		6BA176FB0BC44F93A886559B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2ED12948EF74A71BE3AD88F /* SwiftData.framework in Frameworks */,
+				7BF3DE7E7D3E4ADEA32B8A9C /* SwiftData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4298CBFDA6E948F581DF849B = {
+		209C71F4945145319E202C20 = {
 			isa = PBXGroup;
 			children = (
-				1A9F9F29AFD540A681500FDE /* EMCopilotApp.swift */,
-				9A438F7590CC4D6DBAAC0CE4 /* DirectReport.swift */,
-				00F210C46EBC45148CBF9B77 /* GeneratedDocument.swift */,
-				C9A7B6CBB6AE41E39AE3100B /* Program.swift */,
-				C41D85A203D6429D9BC37F55 /* ClaudeService.swift */,
-				FACBD41C4D844FCA825B506E /* Prompts.swift */,
-				9FEE157330904CD79B3259BB /* ContentView.swift */,
-				D8AB2FDBA0344A5BB63B5E1E /* HomeView.swift */,
-				BF5B5F5213924FFCB51AB810 /* DirectReportsView.swift */,
-				A04AEE2F9811444D8A274F81 /* AddDirectReportView.swift */,
-				C11944B4F33541ED887F7FF9 /* DocumentGeneratorView.swift */,
-				66AB9EAFD9FA44A3B2D06249 /* GeneratedDocumentOutputView.swift */,
-				69E427C862494990B94764CF /* ProgramManagerView.swift */,
-				53264097649B4AA7AD1FF0FE /* SettingsView.swift */,
-				A86452DAC40043FF8013CADC /* Assets.xcassets */,
-				BF515CD19AF5417188B31669 /* Products */,
-				838776726A054E0DB32648F9 /* SwiftData.framework */,
+				3D21AA9E872349F2BAC3453D /* EMCopilotApp.swift */,
+				F86786B654B542668FB77AC5 /* DirectReport.swift */,
+				759A696DBEB74656AEF22A2A /* GeneratedDocument.swift */,
+				800AD02CFA5A4A8487D35B2B /* Program.swift */,
+				81069E2C14654EE3BAEB9D5A /* OneOnOneSession.swift */,
+				4D291738CE23457289669B05 /* ClaudeService.swift */,
+				E59EBA50FC484DB7A063CF67 /* Prompts.swift */,
+				9A566CFB0C70405CB162E536 /* ContentView.swift */,
+				4075A0202A614D46BDB28702 /* MarkdownContentView.swift */,
+				74B2AD232A6C45919B328387 /* OnboardingView.swift */,
+				8A63C5BA53E542A79064FEC0 /* HomeView.swift */,
+				F54E65B02A084C599C1EA4EC /* DirectReportsView.swift */,
+				299E1DFBB6044DF4A728C5E4 /* AddDirectReportView.swift */,
+				144947D6F4A7474FBF81DB60 /* DocumentGeneratorView.swift */,
+				A5E3D4B17065483CAA88ACF2 /* GeneratedDocumentOutputView.swift */,
+				354B43100C3C40089F8AECF5 /* ProgramManagerView.swift */,
+				6507596D7E2D4C588484D743 /* OneOnOneHubView.swift */,
+				400633D192F1479EA7981DE9 /* OneOnOneSessionView.swift */,
+				217AD688360E469C845918FB /* AddArtifactView.swift */,
+				E52279F1305B4A07AFCB872C /* SettingsView.swift */,
+				D530E3142033421EBAF01083 /* Assets.xcassets */,
+				67D9C607D41640D4B9154016 /* Products */,
+				0A3FB34453C74E7ABFA57AE0 /* SwiftData.framework */,
 			);
 			sourceTree = "<group>";
 		};
-		BF515CD19AF5417188B31669 /* Products */ = {
+		67D9C607D41640D4B9154016 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA1FE6999115406197CFF998 /* EMCopilot.app */,
+				3EC979E16C2B4C01BC5EF970 /* EMCopilot.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,13 +110,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F39BA88A7CFC43DEB609D0C6 /* EMCopilot */ = {
+		76CC2A6141D9499EA7192346 /* EMCopilot */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 712E7872AE2F461689F51614 /* Build configuration list for PBXNativeTarget "EMCopilot" */;
+			buildConfigurationList = 4589CFCE523D402E9C1FBFE7 /* Build configuration list for PBXNativeTarget "EMCopilot" */;
 			buildPhases = (
-				78C5F29983EB4458A62B3ADC /* Sources */,
-				C3C12BC22646450289FDAC0A /* Resources */,
-				A8B564F1B2C54C4396272C41 /* Frameworks */,
+				3F5DBE59645546659CD16F60 /* Sources */,
+				7CE89A399F554581A7EC8253 /* Resources */,
+				6BA176FB0BC44F93A886559B /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -108,25 +126,25 @@
 			packageProductDependencies = (
 			);
 			productName = EMCopilot;
-			productReference = DA1FE6999115406197CFF998 /* EMCopilot.app */;
+			productReference = 3EC979E16C2B4C01BC5EF970 /* EMCopilot.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E00D681D1CBA40B18095F27F /* Project object */ = {
+		40968FFF1D8643368DA7B63C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					F39BA88A7CFC43DEB609D0C6 = {
+					76CC2A6141D9499EA7192346 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-			buildConfigurationList = A975F19910624E86B5445795 /* Build configuration list for PBXProject "EMCopilot" */;
+			buildConfigurationList = 1088C461F30143DC87587941 /* Build configuration list for PBXProject "EMCopilot" */;
 			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -134,53 +152,59 @@
 				en,
 				Base,
 			);
-			mainGroup = 4298CBFDA6E948F581DF849B;
-			productRefGroup = BF515CD19AF5417188B31669 /* Products */;
+			mainGroup = 209C71F4945145319E202C20;
+			productRefGroup = 67D9C607D41640D4B9154016 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F39BA88A7CFC43DEB609D0C6 /* EMCopilot */,
+				76CC2A6141D9499EA7192346 /* EMCopilot */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C3C12BC22646450289FDAC0A /* Resources */ = {
+		7CE89A399F554581A7EC8253 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36950D1527434696AE2F87D8 /* Assets.xcassets in Resources */,
+				6D7370FD8FCB4982AD680CFA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		78C5F29983EB4458A62B3ADC /* Sources */ = {
+		3F5DBE59645546659CD16F60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C9B19568B8544FCAD9BC3BB /* EMCopilotApp.swift in Sources */,
-				5C9C6FB255674C17802D5AA4 /* DirectReport.swift in Sources */,
-				E37A2A82FE754245BE7E73CF /* GeneratedDocument.swift in Sources */,
-				97946C4E70D34B42BABB7D22 /* Program.swift in Sources */,
-				E8BCA9A41B2B4854AEB07460 /* ClaudeService.swift in Sources */,
-				D7E9345756DE4F13B8DFBB71 /* Prompts.swift in Sources */,
-				70BF11019006496AA2823C27 /* ContentView.swift in Sources */,
-				D256FA7EFC564A7DB892905D /* HomeView.swift in Sources */,
-				85FBA297D0E440A6B84ADB0C /* DirectReportsView.swift in Sources */,
-				C3BA1D46D22B4F29B6C37C63 /* AddDirectReportView.swift in Sources */,
-				B932E8514375437E8B578CCA /* DocumentGeneratorView.swift in Sources */,
-				6D1894816AD941AC826DD8DA /* GeneratedDocumentOutputView.swift in Sources */,
-				360CF9A1CA804398804F2BC0 /* ProgramManagerView.swift in Sources */,
-				CB4D207A32ED4E1483C53970 /* SettingsView.swift in Sources */,
+				88FDA652D5D545CCB584DD23 /* EMCopilotApp.swift in Sources */,
+				9CB0554D8C1C40C4A139C2A9 /* DirectReport.swift in Sources */,
+				D20C04D33658425CAEAB2E10 /* GeneratedDocument.swift in Sources */,
+				2B557054BCE84ABA9E7094D6 /* Program.swift in Sources */,
+				9126F89AF39F4D7085D51D4E /* OneOnOneSession.swift in Sources */,
+				18F9072F8762434F9F75FB37 /* ClaudeService.swift in Sources */,
+				D38BDC18AC4A454A9A73F08D /* Prompts.swift in Sources */,
+				596734869DBD46F8A7D356BE /* ContentView.swift in Sources */,
+				FB96DAB6F4EF41FD96A53BE6 /* MarkdownContentView.swift in Sources */,
+				B818CCF718E645369149993C /* OnboardingView.swift in Sources */,
+				A4E6056424F14EB5A8932C95 /* HomeView.swift in Sources */,
+				FB21F55130AF41B0815BE1BD /* DirectReportsView.swift in Sources */,
+				CA40227328FE43A08379A843 /* AddDirectReportView.swift in Sources */,
+				5ECAE87DD103479A8589DC39 /* DocumentGeneratorView.swift in Sources */,
+				439DD50AAC9C4796AF51A8D1 /* GeneratedDocumentOutputView.swift in Sources */,
+				4E8436DBC63446BF94B8EF8B /* ProgramManagerView.swift in Sources */,
+				6370681AACBF4FB694890200 /* OneOnOneHubView.swift in Sources */,
+				D83E3A2782C5438090EBFA6B /* OneOnOneSessionView.swift in Sources */,
+				2EDCA93EBF864821B2BD35E4 /* AddArtifactView.swift in Sources */,
+				56EDCBC31D9743DDBF5C25A3 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		8FA4986852B140B285892708 /* Debug */ = {
+		765B9C409A884AC5B14C34E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -201,7 +225,7 @@
 			};
 			name = Debug;
 		};
-		A468D7DE98CD47118424374F /* Release */ = {
+		C5A9DFF36BA24C858825A094 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -218,7 +242,7 @@
 			};
 			name = Release;
 		};
-		FB80E857663841C8B2D2C83D /* Debug */ = {
+		06D2BF64EC6F444BBA81F5E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -242,7 +266,7 @@
 			};
 			name = Debug;
 		};
-		B697D4896A154A9A844D2763 /* Release */ = {
+		600CED7E88AF46618CA48EE1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -269,25 +293,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A975F19910624E86B5445795 /* Build configuration list for PBXProject "EMCopilot" */ = {
+		1088C461F30143DC87587941 /* Build configuration list for PBXProject "EMCopilot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8FA4986852B140B285892708 /* Debug */,
-				A468D7DE98CD47118424374F /* Release */,
+				765B9C409A884AC5B14C34E6 /* Debug */,
+				C5A9DFF36BA24C858825A094 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		712E7872AE2F461689F51614 /* Build configuration list for PBXNativeTarget "EMCopilot" */ = {
+		4589CFCE523D402E9C1FBFE7 /* Build configuration list for PBXNativeTarget "EMCopilot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FB80E857663841C8B2D2C83D /* Debug */,
-				B697D4896A154A9A844D2763 /* Release */,
+				06D2BF64EC6F444BBA81F5E1 /* Debug */,
+				600CED7E88AF46618CA48EE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E00D681D1CBA40B18095F27F /* Project object */;
+	rootObject = 40968FFF1D8643368DA7B63C /* Project object */;
 }

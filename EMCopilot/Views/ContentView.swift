@@ -44,14 +44,23 @@ enum AppDestination: Hashable, CaseIterable {
 }
 
 struct ContentView: View {
+    @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
     @State private var selectedDestination: AppDestination = .home
 
     var body: some View {
-        #if os(macOS)
-        macOSLayout
-        #else
-        iOSLayout
-        #endif
+        Group {
+            #if os(macOS)
+            macOSLayout
+            #else
+            iOSLayout
+            #endif
+        }
+        .sheet(isPresented: Binding(
+            get: { !hasCompletedOnboarding },
+            set: { _ in }   // OnboardingView dismisses itself by setting hasCompletedOnboarding = true
+        )) {
+            OnboardingView()
+        }
     }
 
     // MARK: - macOS: NavigationSplitView
