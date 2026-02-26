@@ -1,0 +1,28 @@
+# Xcode
+*.xcworkspace/
+xcuserdata/
+*.xcscheme
+*.xcbkptlist
+DerivedData/
+build/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# SwiftPM
+.build/
+.swiftpm/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Secrets – never commit API keys
+*.env
+Secrets.swift
